@@ -285,3 +285,33 @@ class MainActivity : AppCompatActivity() {
             return -1
         }
         val pierwsza = 101
+
+        var wzor_H = 0
+        var tekst_H = 0
+        var m = 1
+        for (i in 0 until y)
+        {
+            wzor_H = (wzor_H * pierwsza + wzor[i].toInt()) % Int.MAX_VALUE
+            tekst_H = (tekst_H * pierwsza + tekst[i].toInt()) % Int.MAX_VALUE
+            if (i < y - 1) m = (m * pierwsza) % Int.MAX_VALUE
+        }
+
+        for (i in 0..x - y)
+        {
+            if (tekst_H == wzor_H && tekst.substring(i, i + y) == wzor)
+            {
+                return i
+            }
+            if (i < x - y)
+            {
+                tekst_H = ((tekst_H - tekst[i].toInt() * m) * pierwsza + tekst[i + y].toInt()) % Int.MAX_VALUE
+                if (tekst_H < 0)
+                {
+                    tekst_H += Int.MAX_VALUE
+                }
+            }
+        }
+
+        return -1
+    }
+}
