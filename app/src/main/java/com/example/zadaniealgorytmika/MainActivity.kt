@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Button
+
         findViewById<Button>(R.id.btn).setOnClickListener {
 
             val ilosc_elementow = findViewById<EditText>(R.id.EditText1).text.toString()
