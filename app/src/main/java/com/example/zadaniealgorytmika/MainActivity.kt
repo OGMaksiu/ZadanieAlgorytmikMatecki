@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.example.zadaniealgorytmika.R
 import kotlin.system.measureTimeMillis
 
 class MainActivity : AppCompatActivity() {
@@ -19,8 +20,8 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btn).setOnClickListener {
 
-            val ilosc_elementow = findViewById<EditText>(R.id.EditText1).text.toString()
-            val wzor = findViewById<EditText>(R.id.EditText2).text.toString()
+            val ilosc_elementow = findViewById<EditText>(R.id.editText).text.toString()
+            val wzor = findViewById<EditText>(R.id.editText2).text.toString()
 
             if (!ilosc_elementow.toString().isEmpty() && !wzor.isEmpty()) {
 
